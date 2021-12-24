@@ -13,7 +13,7 @@ import pingRouter from './routes/ping';
 import downloadRouter from './routes/download';
 import uploadRouter from './routes/upload';
 import consola from 'consola';
-const port = process.env.port || 8080;
+const port = process.env.port || process.env.PORT || 8080;
 
 const init = async () => {
   const client: DiscorageClient = new DiscorageClient({
