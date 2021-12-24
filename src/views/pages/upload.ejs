@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <div class="jumbotron text-center" style="margin-top: 2em">
+      <h3>Discorage</h3>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <b>File:</b>
+        <input type="file" name="file" id="file" single />
+        <input
+          class="btn btn-primary"
+          type="submit"
+          style="border-radius: 4px"
+          name="file"
+          value="Upload"
+        />
+      </form>
+    </div>
+  </body>
+</html>
