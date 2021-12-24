@@ -4,7 +4,7 @@
   "description": "Discord bot to store files (with chunking and web support).",
   "main": "src/index.ts",
   "engines": {
-    "node": "17.3.0",
+    "node": "16.13.1",
     "npm": "8.3.0"
   },
   "scripts": {
