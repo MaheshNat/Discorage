@@ -11,6 +11,12 @@ const uploadRouter = Router();
 uploadRouter.use('', async (req, res) => {
   const client: DiscorageClient = res.locals.discorageClient;
 
+  const existingFile = await File.findOne({
+    name: req.file.originalname,
+  });
+  if (existingFile !== null)
+    return res.render('pages/duplicate', { name: req.file.originalname });
+
   const chunks: Chunk[] = [];
   const storageChannelId = client.settings.get(
     client.config.guildId,

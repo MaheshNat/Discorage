@@ -12,7 +12,7 @@
     "start:dev": "ts-node src/index.ts",
     "dev": "ts-node-dev src/index.ts",
     "start": "node dist/index.js",
-    "build": "cd src && copyfiles views/**/* ../dist && copyfiles public/**/* ../dist && tsc",
+    "build": "cd src && copyfiles views/**/* ../dist && copyfiles public/**/* ../dist && cd ../dist && mkdir -p data && tsc",
     "watch": "tsc -w"
   },
   "author": "",
