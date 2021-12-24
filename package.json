@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Discord bot to store files (with chunking and web support).",
   "main": "src/index.ts",
+    "engines": {
+    "node": "17.3.0",
+    "npm": "8.3.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "ts-node src/index.ts",

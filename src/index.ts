@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import { join } from 'path';
-dotenv.config({ path: join(__dirname, '.env') });
+dotenv.config();
 
 import DiscorageClient from './client/DiscorageClient';
 import { ColorResolvable } from 'discord.js';

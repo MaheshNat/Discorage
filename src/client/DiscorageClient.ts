@@ -1,7 +1,6 @@
 import {
   AkairoClient,
   CommandHandler,
-  InhibitorHandler,
   ListenerHandler,
   MongooseProvider,
 } from 'discord-akairo';
@@ -57,29 +56,21 @@ export default class DiscorageClient extends AkairoClient {
       ignorePermissions: this.config.owners,
     });
 
-    this.inhibitorHandler = new InhibitorHandler(this, {
-      directory: join(__dirname, '..', 'inhibitors'),
-    });
-
     this.listenerHandler = new ListenerHandler(this, {
       directory: join(__dirname, '..', 'listeners'),
     });
   }
 
   private async _init() {
-    this.commandHandler.useInhibitorHandler(this.inhibitorHandler);
     this.commandHandler.useListenerHandler(this.listenerHandler);
 
     this.listenerHandler.setEmitters({
       commandHandler: this.commandHandler,
-      inhibitorHandler: this.inhibitorHandler,
       listenerHandler: this.listenerHandler,
     });
 
     this.commandHandler.loadAll();
     consola.success('loaded commands');
-    this.inhibitorHandler.loadAll();
-    consola.success('loaded inhibitors');
     this.listenerHandler.loadAll();
     consola.success('loaded listeners');
 
