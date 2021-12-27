@@ -10,9 +10,10 @@ declare global {
       statusUrl: string;
       mongoUri: string;
       owners: string;
-      port: number;
+      port: string;
       baseUrl: string;
       guildId: string;
+      paginationTimeout: string;
     }
   }
 }

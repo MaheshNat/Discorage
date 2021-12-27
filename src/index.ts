@@ -24,6 +24,7 @@ const init = async () => {
     owners: JSON.parse(process.env.owners),
     baseUrl: process.env.baseUrl,
     guildId: process.env.guildId,
+    paginationTimeout: parseInt(process.env.paginationTimeout),
   });
   client.start();
 

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import axios from 'axios';
+import { ObjectId } from 'mongoose';
 
 export const saveFile = async (url: string, filePath: string) => {
   const writer = fs.createWriteStream(filePath, { flags: 'a' });
@@ -40,3 +41,7 @@ export async function* read(
     yield buffer;
   }
 }
+
+export const getTimestamp = (id: ObjectId) => {
+  return new Date(parseInt(id.toString().slice(0, 8), 16) * 1000);
+};

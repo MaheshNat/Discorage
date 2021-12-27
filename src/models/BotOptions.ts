@@ -9,4 +9,5 @@ export default interface BotOptions {
   chunkSize?: number;
   baseUrl?: string;
   guildId?: string;
+  paginationTimeout?: number;
 }
